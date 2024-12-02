@@ -48,6 +48,7 @@ The training pipeline consists of five main stages:
    - Store class mappings
    - Save training metrics
 ---
+NB: The model is only 17.9 MB on disk
 
 ### Prediction Process
 ![Prediction Workflow](./img/prediction-workflow.png)
