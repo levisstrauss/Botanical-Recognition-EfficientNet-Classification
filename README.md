@@ -33,14 +33,14 @@ The training pipeline consists of five main stages:
    - Load pre-trained EfficientNet-B0
    - Freeze feature extraction layers
    - Modify classifier for 102 flower classes
-   - Move model to appropriate device
+   - Move the model to the appropriate device
 
 4. **Training Loop**
    - Forward pass: compute predictions
    - Calculate loss using CrossEntropyLoss
    - Backward pass: compute gradients
    - Update weights using Adam optimizer
-   - Validate on test set
+   - Validate on a test set
    - Track metrics (loss and accuracy)
 
 5. **Model Saving**
@@ -68,7 +68,7 @@ The prediction pipeline follows these steps:
    - Set model to evaluation mode
 
 3. **Inference**
-   - Pass processed image through model
+   - Pass processed image through a model
    - Apply softmax to get probabilities
    - Get top-k predictions
    - Map indices to flower names
@@ -101,16 +101,20 @@ Top 5 Predictions with topK args = 5
 
 1. Clone the repository
 ```bash
-git clone https://github.com/levisstrauss/flower-classification.git
-cd flower-classification
+   git clone https://github.com/levisstrauss/flower_classification.git
+   cd flower_classification
 ```
 2. Create and activate virtual environment (optional but recommended)
 ```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+3. Install dependencies
+```bash
+   pip install -r requirements.txt
 ```
 ## 📊 Project Structure
-```bash
+```
 flower-classification/
 ├── data/
 │   └── flowers/           # Dataset directory
@@ -128,7 +132,7 @@ flower-classification/
 ###  Training
 Train a new model with custom parameters:
 ```bash
-python train.py flowers --arch efficientnet_b0 --learning_rate 0.001 --epochs 1 --gpu --save_dir models
+   python train.py flowers --arch efficientnet_b0 --learning_rate 0.001 --epochs 1 --gpu --save_dir models
 ```
 ### Arguments:
 - data_directory: Path to data directory (default: "flowers")
@@ -153,18 +157,18 @@ python train.py flowers --arch efficientnet_b0 --learning_rate 0.001 --epochs 1 
 - Model achieves the best validation accuracy around epoch 3.5
 
 #### Key Observations
-1. **No Overfitting**: Validation metrics consistently improve
-2. **Convergence**: Loss curves show steady decrease
-3. **Stable Learning**: No erratic fluctuations in metrics
-4. **Good Generalization**: Model performs better on validation set
+   1. **No Overfitting**: Validation metrics consistently improve
+   2. **Convergence**: Loss curves show steady decrease
+   3. **Stable Learning**: No erratic fluctuations in metrics
+   4. **Good Generalization**: Model performs better on a validation set
 
 ## Prediction
 Make predictions on new images:
 ```bash
-python predict.py ./flowers/test/28/image_05230.jpg models/efficientnet_b0_checkpoint.pth --category_names cat_to_name.json --gpu --top_k 5
+   python predict.py ./flowers/test/28/image_05230.jpg models/efficientnet_b0_checkpoint.pth --category_names cat_to_name.json --gpu --top_k 5
 ```
 ### Arguments:
-- input: Path to image file (required)
+- input: Path to an image file (required)
 - checkpoint: Path to saved model checkpoint (required)
 - --top_k: Number of top predictions to return (default: 5)
 - --category_names: Path to category names JSON file (default: 'cat_to_name.json')
@@ -172,12 +176,12 @@ python predict.py ./flowers/test/28/image_05230.jpg models/efficientnet_b0_check
 
 ## 📈 Model Architecture
 ```bash
-model.classifier = nn.Sequential(
-    nn.Dropout(p=0.2, inplace=True),
-    nn.Linear(in_features=1280, out_features=102, bias=True)
-)
+   model.classifier = nn.Sequential(
+       nn.Dropout(p=0.2, inplace=True),
+       nn.Linear(in_features=1280, out_features=102, bias=True)
+   )
 ```
-## 🎯 Performance for 5 epochs
+## 🎯 Performance for five epochs
 
 - Training Accuracy: 86%
 - Validation Accuracy: 90.7%

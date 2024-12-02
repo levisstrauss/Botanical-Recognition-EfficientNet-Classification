@@ -1,18 +1,19 @@
 import torch
 from torch import nn
 import torchvision
-from PIL import Image  
-import os  
+from PIL import Image
+import os
+
 
 def setup_model(arch: str, device: torch.device):
     """
     Set up model architecture and modify classifier based on architecture choice
     """
     if arch == 'efficientnet_b0':
-        
+
         weights = torchvision.models.EfficientNet_B0_Weights.DEFAULT
         model = torchvision.models.efficientnet_b0(weights=weights)
-        
+
         # Freeze feature parameters
         for param in model.features.parameters():
             param.requires_grad = False
@@ -36,14 +37,15 @@ def setup_model(arch: str, device: torch.device):
     #     )
     else:
         raise ValueError(f"Unsupported architecture: {arch}")
-    
+
     return model.to(device)
+
 
 def save_checkpoint(model, image_datasets, optimizer, args, save_dir):
     """Save model checkpoint"""
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)
-        
+
     checkpoint = {
         'architecture': args.arch,
         'state_dict': model.state_dict(),
@@ -51,7 +53,7 @@ def save_checkpoint(model, image_datasets, optimizer, args, save_dir):
         'optimizer_state_dict': optimizer.state_dict(),
         'epochs_completed': args.epochs,
     }
-    
+
     checkpoint_path = os.path.join(save_dir, f'{args.arch}_checkpoint.pth')
     torch.save(checkpoint, checkpoint_path)
     return checkpoint_path
