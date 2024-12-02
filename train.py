@@ -1,11 +1,9 @@
 import argparse
 import torch
 from torch import nn, optim
-import os
 from model_utils import setup_model, save_checkpoint
 from data_utils import load_data
 from train_utils import engine
-from utils import plot_loss_curves
 
 
 def get_input_args():

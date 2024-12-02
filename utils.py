@@ -5,9 +5,9 @@ import matplotlib.pyplot as plt
 
 
 def process_image(image_path):
-    ''' Scales, crops, and normalizes a PIL image for a PyTorch model,
+    """ Scales, crops, and normalizes a PIL image for a PyTorch model,
         returns an Numpy array
-    '''
+    """
     # Load image
     img = Image.open(image_path)
 
@@ -44,15 +44,7 @@ def process_image(image_path):
 
 # Plot loss curves of a model
 def plot_loss_curves(results):
-    """Plots training curves of a results dictionary.
 
-    Args:
-        results (dict): dictionary containing list of values, e.g.
-            {"train_loss": [...],
-             "train_acc": [...],
-             "test_loss": [...],
-             "test_acc": [...]}
-    """
     loss = results["train_loss"]
     test_loss = results["test_loss"]
 
