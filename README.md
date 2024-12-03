@@ -6,7 +6,20 @@
 
 A deep learning application that classifies 102 different flower species using transfer learning with EfficientNet-B0 architecture. This project demonstrates image classification using PyTorch, with a command-line interface for both training and prediction.
 
-![Training Workflow](./img/background.webp)
+![Background](./img/background.webp)
+
+![Background](./img/badge.webp)
+
+## 🌟 Project Highlights
+
+> "Great work! 
+   Congratulations on completing your project! 
+   I certainly enjoyed walking through your code. 
+   It's very clean and very well commented. 
+   I can clearly see the effort that has been put into this. 
+   I tried the command line utility too, it works like a charm! 
+   Very well implemented."<br/>
+— Project Reviewer
 
 ## 🔄 Project Workflow
 
