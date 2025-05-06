@@ -10,23 +10,8 @@ A deep learning application that classifies 102 different flower species using t
 
 ![Background](./img/badge.webp)
 
-## 🌟 Project Highlights
 
-> "Great work! 
-   Congratulations on completing your project! 
-   I certainly enjoyed walking through your code. 
-   It's very clean and very well commented. 
-   I can clearly see the effort that has been put into this. 
-   I tried the command line utility too, it works like a charm! 
-   Very well implemented."<br/>
-— Project Reviewer
-
-## 🔄 Project Workflow
-
-### Training Process
-![Training Workflow](./img/training-workflow.png)
-
-The training pipeline consists of five main stages:
+## The training pipeline consists of five main stages:
 
 1. **Initialization**
    - Parse command line arguments
@@ -60,13 +45,10 @@ The training pipeline consists of five main stages:
    - Save model checkpoints
    - Store class mappings
    - Save training metrics
----
+
 NB: The model is only 17.9 MB on disk
 
-### Prediction Process
-![Prediction Workflow](./img/prediction-workflow.png)
-
-The prediction pipeline follows these steps:
+## The prediction pipeline follows these steps:
 
 1. **Image Processing**
    - Load input image
@@ -93,7 +75,7 @@ The prediction pipeline follows these steps:
    - Plot probability distribution
    - Print flower names and confidence scores
 
-Example Output:
+## Example Output:
 
 Top 5 Predictions with topK args = 5
 1. stemless gentian: 0.9387
