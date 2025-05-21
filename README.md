@@ -184,12 +184,6 @@ Make predictions on new images:
 - Test Accuracy: 90.23%
   - Total Correct: 739/819
   - Test loss: 0.413
-
-## 🌱 Future Improvements
-    ■ Add support for more architectures
-    ■ Implement data augmentation techniques
-    ■ Add model ensemble capabilities
-    ■ Improve visualization tools
     
 ## 📚 Dataset
 The project uses the 102 Category Flower Dataset from Oxford University, consisting of 102 flower categories with each class containing between 40 and 258 images.
