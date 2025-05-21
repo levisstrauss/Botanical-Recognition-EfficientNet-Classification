@@ -205,25 +205,3 @@ It provides a challenging benchmark for fine-grained visual categorization with 
 
 ## 📄 License
 This project is licensed under the MIT License – see the LICENSE file for details.
-
-<div align="center"> <p><b>Zakaria Coulibaly</b><br> ML Engineer & Data Scientist<br> <a href="https://codemon.io">codemon.io</a> | <a href="https://linkedin.com/in/codemon">LinkedIn</a></p> </div> 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
